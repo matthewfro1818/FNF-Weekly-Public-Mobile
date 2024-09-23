@@ -1437,7 +1437,11 @@ class PlayState extends MusicBeatState
 		topBar.cameras = [camOther];
 		bottomBar.cameras = [camOther];
 		
-		#if ios && android
+		#if ios
+                addMobileControls(false);
+                mobileControls.visible = false;
+		#end
+		#if android
                 addMobileControls(false);
                 mobileControls.visible = false;
 		#end
@@ -2107,7 +2111,10 @@ class PlayState extends MusicBeatState
 		if(ret != Globals.Function_Stop) {
 			if (skipCountdown || startOnTime > 0) skipArrowStartTween = true;
 
-	 		#if ios && android
+	 		#if ios
+			mobileControls.visible = true;
+			#end
+	 		#if android
 			mobileControls.visible = true;
 			#end
 			
@@ -4426,7 +4433,10 @@ class PlayState extends MusicBeatState
 		deathCounter = 0;
 		seenCutscene = false;
 		
- 		#if ios && android
+ 		#if ios
+		mobileControls.visible = false;
+		#end
+ 		#if android
 		mobileControls.visible = false;
 		#end
 
