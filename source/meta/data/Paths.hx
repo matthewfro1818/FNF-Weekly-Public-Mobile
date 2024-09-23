@@ -389,8 +389,6 @@ class Paths
 	public static function returnGraphic(key:String, ?library:String, ?allowGPU:Bool = true) {
 		var bitmap:BitmapData = null;
 		var file:String = null;
-
-		file = modsImages(key);
 		if (currentTrackedAssets.exists(file))
 		{
 			localTrackedAssets.push(file);
